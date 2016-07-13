@@ -9,3 +9,9 @@ However, the setup with Flask was very difficult. Since my webserver was an Apac
 All of these instructions are for a Unix based system.
 
 # Installing Flask
+
+The first step is to install Flask from the official site. The documentation walks you through installing Flask. The docs recommend that you use a virtual environment when working with Flask on your system. If virtualenv is not installed on your system, you can use
+
+$ sudo easy_install virtualenv
+$ sudo pip install virtualenv
+$ sudo apt-get install python-virtualenv
