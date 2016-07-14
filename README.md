@@ -15,3 +15,8 @@ The first step is to install Flask from the official site. The documentation wal
 $ sudo easy_install virtualenv
 $ sudo pip install virtualenv
 $ sudo apt-get install python-virtualenv
+
+One of the three above options should work for installing virtualenv. Once that is done, we then make sure we are in the directory where our project will be and create a virtual environment
+
+$ cd myApplication
+$ virtualenv venv
