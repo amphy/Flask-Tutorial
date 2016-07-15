@@ -20,3 +20,10 @@ One of the three above options should work for installing virtualenv. Once that 
 
 $ cd myApplication
 $ virtualenv venv
+
+This will create a virtual environment called venv in our myApplication directory. To activate your virtual environment, you can use
+
+$ . venv/bin/activate
+The next step is to then install Flask using pip. If you already have pip on your system, you can simply use
+
+$ pip install Flask
