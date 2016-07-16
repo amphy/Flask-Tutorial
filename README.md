@@ -27,3 +27,7 @@ $ . venv/bin/activate
 The next step is to then install Flask using pip. If you already have pip on your system, you can simply use
 
 $ pip install Flask
+
+Be sure to do this in the directory your application will be (for example, if your application is in a directory called “MyApplication”, be sure to install Flask within the “MyApplication” directory). You can find more information about pip here. After you have successfully installed Flask, it’s on to the next step.
+
+# Configuring Apache
