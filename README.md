@@ -31,3 +31,7 @@ $ pip install Flask
 Be sure to do this in the directory your application will be (for example, if your application is in a directory called “MyApplication”, be sure to install Flask within the “MyApplication” directory). You can find more information about pip here. After you have successfully installed Flask, it’s on to the next step.
 
 # Configuring Apache
+
+Because Flask can actually serve pages itself, there is some configuration that needs to be done in order to actually use Flask with Apache. In order to use Flask with Apache, you will first need to create a Web Server Gateway Interfact (WSGI) file. More information about WSGI can be found in its documentation.
+
+The way I like to set up my projects is to have my main python script, my project folder, and my wsgi file to all have the same name. Within my WSGI file (in this example, called sampleapp.wsgi), I put the following
