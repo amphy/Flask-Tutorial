@@ -35,3 +35,31 @@ Be sure to do this in the directory your application will be (for example, if yo
 Because Flask can actually serve pages itself, there is some configuration that needs to be done in order to actually use Flask with Apache. In order to use Flask with Apache, you will first need to create a Web Server Gateway Interfact (WSGI) file. More information about WSGI can be found in its documentation.
 
 The way I like to set up my projects is to have my main python script, my project folder, and my wsgi file to all have the same name. Within my WSGI file (in this example, called sampleapp.wsgi), I put the following
+
+#!/usr/bin/python
+
+import os
+os.environ['PYTHON_EGG_CACHE'] = '/var/www/sampleapp/python-eggs'
+
+activate_this = '/var/www/sampleapp/bin/activate_this.py'
+execfile(activate_this, dict(__file__=activate_this))
+
+import sys
+sys.path.insert(0, '/var/www/sampleapp')
+sys.path.append('/var/www/sampleapp')
+
+from sampleapp import app as application
+This file must be located within the same directory as the rest of your project. After setting up your WSGI file, the next step is to create a virtual host for Flask applications on your Apache server. Each time you create a new Flask application and want to serve it through Apache, you can edit this virtual host to include the new application.#!/usr/bin/python
+
+import os
+os.environ['PYTHON_EGG_CACHE'] = '/var/www/sampleapp/python-eggs'
+
+activate_this = '/var/www/sampleapp/bin/activate_this.py'
+execfile(activate_this, dict(__file__=activate_this))
+
+import sys
+sys.path.insert(0, '/var/www/sampleapp')
+sys.path.append('/var/www/sampleapp')
+
+from sampleapp import app as application
+This file must be located within the same directory as the rest of your project. After setting up your WSGI file, the next step is to create a virtual host for Flask applications on your Apache server. Each time you create a new Flask application and want to serve it through Apache, you can edit this virtual host to include the new application.
