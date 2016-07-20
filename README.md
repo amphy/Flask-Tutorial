@@ -63,3 +63,36 @@ sys.path.append('/var/www/sampleapp')
 
 from sampleapp import app as application
 This file must be located within the same directory as the rest of your project. After setting up your WSGI file, the next step is to create a virtual host for Flask applications on your Apache server. Each time you create a new Flask application and want to serve it through Apache, you can edit this virtual host to include the new application.
+
+WSGIPythonPath 
+/var/www/sampleapp/venv/python2.7/site-packages 
+<VirtualHost *:80>
+  ServerName your-domain.com
+  ServerAdmin 
+your-email@email.com
+  WSGIScriptAlias /sampleapp 
+/var/www/sampleapp/sampleapp.wsgi
+  WSGIScriptAlias /sampleapp2 
+/var/www/sampleapp2/sampleapp2.wsgi
+  DocumentRoot /var/www/ 
+#document root for your websites
+  <Directory 
+/var/www/sampleapp/>
+    Order allow,deny
+    Allow from all
+  </Directory>
+  <Directory 
+/var/www/sampleapp2/>
+    Order allow,deny
+    Allow from all
+  </Directory>
+  Alias /static 
+/var/www/sampleapp/static
+  Alias /sampleapp2/static 
+/var/www/sampleapp2/static
+  <Directory 
+/var/www/sampleapp/static/>
+    Order allow,deny
+    Allow from all
+  </Directory>
+  <Directory /va
