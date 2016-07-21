@@ -98,4 +98,19 @@ your-email@email.com
     Order allow,deny
     Allow from all
   </Directory>
-  <Directory /va
+<Directory /var/www/sampleapp2/static/>
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  LogLevel info
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+RewriteEngine on
+RewriteCond %{SERVER_NAME} = your-domain-name.com
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [L,QSA,R=permanent]
+</VirtualHost>
+Be sure to replace the information with your own information (for example, wherever it requests a domain name).
+
+After creating this file, the virtual host needs to be enabled. You can do this using
