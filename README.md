@@ -111,6 +111,10 @@ RewriteEngine on
 RewriteCond %{SERVER_NAME} = your-domain-name.com
 RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [L,QSA,R=permanent]
 </VirtualHost>
+
 Be sure to replace the information with your own information (for example, wherever it requests a domain name).
 
 After creating this file, the virtual host needs to be enabled. You can do this using
+
+$ a2ensite flask
+$ service apache2 restart
