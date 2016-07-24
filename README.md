@@ -118,3 +118,5 @@ After creating this file, the virtual host needs to be enabled. You can do this 
 
 $ a2ensite flask
 $ service apache2 restart
+
+replacing flask with the name of your virtual host file. This should activate your new virtual host so that when you go to your-domain.com/sampleapp, the default Flask application should show (it displays Hello World). If you’ve implemented all of the above and a Hello World appears when you go to the proper URL, congratulations! You have successfully served a Flask application through an Apache server.
